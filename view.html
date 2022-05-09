@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Movie Table</h2>     
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Rating</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(user){ 
+        if(user != null ){
+        %>
+            <tr>
+                <td><%= user.title %></td>
+                <td><%= user.description %></td>
+                <td><img style="width: 50px;height:50px" src="/image/<%= user.image %>"></td>
+                <td><%= user.rating %></td>
+                <td><a href="delete-form/<%= user.id %>" style="color:red">Delete</a> <a href="edit/<%= user.id %>" style="color:green">Update</a></td>
+            </tr>
+            <%  } }); %>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
